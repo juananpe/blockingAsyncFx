@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="eus.ehu.asyncdemo.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="welcomeText"/>
+    
+    <HBox alignment="CENTER" spacing="10.0">
+        <Label text="Delay (seconds):"/>
+        <Spinner fx:id="delaySpinner" min="1" max="10" initialValue="3" amountToStepBy="1" editable="true"/>
+    </HBox>
+    
+    <Button text="Load Image Async" onAction="#onLoadImageAsyncButtonClick"/>
+    <Button text="Load Image Blocking" onAction="#onLoadImageBlockingButtonClick"/>
+    <ImageView fx:id="imageView" fitWidth="300" fitHeight="300" preserveRatio="true"/>
+    <TextArea fx:id="userInput" promptText="Try typing here while loading the image..." prefRowCount="3" wrapText="true"/>
+</VBox>
